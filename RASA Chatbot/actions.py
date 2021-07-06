@@ -30,7 +30,7 @@ class ActionSearchRestaurants(Action):
         return 'action_search_restaurants'
 
     def run(self, dispatcher, tracker, domain):
-        config = {"user_key": "1eb231cb1eb260c5fd373f092a2dd2dd"}
+        config = {"user_key": "<userkey>"}
         # config = {"user_key": "f4924dc9ad672ee8c4f8c84743301af5"}
         # config = {'user_key':"455c41499144739a6f131347a8130495"}
         zomato = zomatopy.initialize_app(config)
@@ -124,8 +124,8 @@ class SendMail(Action):
         mail_content = '''Hello User,\n \n Welcome to Foodie Chatbot!! \n \n Following are the top 10 resturants search results in '''+location+'''\n \n Results:\n \n'''+restaurant_result+''' \n Thanks, \n Team Foodie '''
 
         #The mail addresses and password
-        sender_address = 'sandmupgrad@gmail.com'
-        sender_pass = 'Upgrad$1234'
+        sender_address = '<username>'
+        sender_pass = '<pwd>'
         receiver_address = email
         #Setup the MIME
         message = MIMEMultipart()

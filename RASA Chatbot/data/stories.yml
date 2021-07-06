@@ -1,0 +1,1568 @@
+version: "2.0"
+stories:
+- story: complete path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: mid
+  - slot_was_set:
+    - price: mid
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+      - email: rcmanu@gmail.com
+  - slot_was_set:
+      - email: rcmanu@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+  
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: Hyderabad
+  - slot_was_set:
+    - location: Hyderabad
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: South Indian
+  - slot_was_set:
+    - cuisine: South Indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: mid
+  - slot_was_set:
+    - price: mid
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Shalimar Tiffins And Snacks Resturant Address: RP Road, Rani Gunj, Secunderabad , Resturant Rating: 4.6 , Average cost for 2:300\n2. Resturant Name: Kayal Kerala Restaurant Resturant Address: MIG-A-58, APHB Colony, Andhra Pradesh Housing Board Phase 4, Indira Nagar, Gachibowli, Hyderabad , Resturant Rating: 4.6 , Average cost for 2:500\n3. Resturant Name: SSP Kitchen & Dosa Station Resturant Address: Anupama Homes, Narsingi-Puppalaguda Main Road, Manikonda, Hyderabad , Resturant Rating: 4.5 , Average cost for 2:550\n4. Resturant Name: Udipi's Upahar Resturant Address: House 2-21/4, Kanhaiyalal Complex, Indhira Nagar, Gachibowli, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:300\n5. Resturant Name: Kitchen house Resturant Address: Plot 354-B, Ragavendra Colony, Kondapur, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:350\n6. Resturant Name: Imperial Multi Cuisine Restaurant Resturant Address: Opposite HP Petrol Pump, Saidabad X Roads, Malakpet, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:700\n7. Resturant Name: House of Dosas Resturant Address: Opposite Lucid Diagnostics, Road 2, Banjara Hills, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:300\n8. Resturant Name: Alhamdulillah Hotel Resturant Address: Door 11-2-284, Habeeb Nagar Road, Aghapura, Nampally, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:450\n9. Resturant Name: Sri Kanya Resturant Address: Near Model House, Dwarkapuri, Panjagutta Road, Panjagutta, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:500\n10. Resturant Name: Akson Restaurant Resturant Address: Shop 6/670, Opposite Model House, Avenue 4, Panjagutta, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:500\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: sri.pallam@gmail.com
+  - slot_was_set:
+    - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: rishikesh
+  - slot_was_set:
+    - location: rishikesh
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: false
+  - action: utter_loc_not_serviceable
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: Rishikesh
+  - slot_was_set:
+    - location: Rishikesh
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: false
+  - action: utter_loc_not_serviceable
+  - intent: restaurant_search
+    entities:
+    - location: Allahabad
+  - slot_was_set:
+    - location: Allahabad
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: false
+  - action: utter_loc_not_serviceable
+  - intent: restaurant_search
+    entities:
+    - location: Ahmedabad
+  - slot_was_set:
+    - location: Ahmedabad
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: high
+  - slot_was_set:
+    - price: high
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: TG’s - The Oriental Grill - Hyatt Resturant Address: Near Vastrapur Lake, Vastrapur, Ahmedabad , Resturant Rating: 4.6 , Average cost for 2:2200\n2. Resturant Name: 650 - The Global Kitchen Resturant Address: Near Golden Tulip Bunglows & Tulip Citadel, Shreekunj Mandapam, Rajivnagar, Ayojan Nagar, Ambavadi, Ahmedabad , Resturant Rating: 4.5 , Average cost for 2:1200\n3. Resturant Name: Lollo Rosso Resturant Address: Shop 2, Ground Floor, Aeon Complex, Opposite Navkar Institute, Navrangpura, Ahmedabad , Resturant Rating: 4.5 , Average cost for 2:900\n4. Resturant Name: Tinello - Hyatt Regency Resturant Address: 17/A, Usmanpura, Ashram Road, Ahmedabad , Resturant Rating: 4.5 , Average cost for 2:2500\n5. Resturant Name: China House - Hyatt Regency Resturant Address: 17 A, Near Ashram Road, Ahmedabad , Resturant Rating: 4.5 , Average cost for 2:2400\n6. Resturant Name: @Mango Resturant Address: Opposite Sindhu Bhawan, Bodakdev, Ahmedabad , Resturant Rating: 4.4 , Average cost for 2:1300\n7. Resturant Name: Cafe Upper Crust Resturant Address: Aarohi Complex, Vijay Cross Road, Navrangpura, Ahmedabad , Resturant Rating: 4.4 , Average cost for 2:1000\n8. Resturant Name: Lollo Rosso Resturant Address: 3, Ground Floor, One World Capital, Off Rajpath Rangoli Road, Near Lane Of Orbit, Bodakdev, Ahmedabad , Resturant Rating: 4.4 , Average cost for 2:900\n9. Resturant Name: SandwichworkZ - The Fusion Street Cafe Resturant Address: Basement, Madhav Complex, Opposite Shivalik Plaza, IIM Road, Polytechnic, Vastrapur, Ahmedabad , Resturant Rating: 4.3 , Average cost for 2:700\n10. Resturant Name: M.A.D By Tomato's Resturant Address: Ground Floor, Sumel Complex, S.G.Highway, Near Tej Motors, Bodakdev, Ahmedabad , Resturant Rating: 4.3 , Average cost for 2:1000\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: sri.pallam@gmail.com
+  - slot_was_set:
+    - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: kolkata
+  - slot_was_set:
+    - location: kolkata
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: American
+  - slot_was_set:
+    - cuisine: American
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: < 300
+  - slot_was_set:
+    - price: < 300
+  - action: action_search_restaurants
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: sri.pallam@gmail.com
+  - slot_was_set:
+    - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+  
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: kolkata
+  - slot_was_set:
+    - location: kolkata
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: American
+  - slot_was_set:
+    - cuisine: American
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: < 300
+  - slot_was_set:
+    - price: < 300
+  - action: action_search_restaurants
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+      - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+      - email: sri.pallam@gmail.com
+  - slot_was_set:
+      - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+      - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+    entities:
+    - location: kolkata
+  - slot_was_set:
+    - location: kolkata
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: American
+  - slot_was_set:
+    - cuisine: American
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: low
+  - slot_was_set:
+    - price: low
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Solid Gulp (Bapi Dar Momo) Resturant Address: Karunamoyee Bus Stop, Sector 2, Salt Lake , Resturant Rating: 4.9 , Average cost for 2:200\n2. Resturant Name: Wok This Way Resturant Address: 5, Sarat Chatterjee Avenue, Menoka Cinema, Southern Avenue, Kolkata , Resturant Rating: 4.4 , Average cost for 2:300\n3. Resturant Name: Street Cafe Resturant Address: Unitech Chambers Mall, Rajdanga Main Road, Kasba, Kolkata , Resturant Rating: 4.3 , Average cost for 2:300\n4. Resturant Name: Chetty's Corner Resturant Address: 41, Justice Chandramahadeb Road, Sreepally, Bhowanipore, Kolkata , Resturant Rating: 4.2 , Average cost for 2:250\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: sri.pallam@gmail.com
+  - slot_was_set:
+    - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: mubaim
+  - slot_was_set:
+    - location: mubaim
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: false
+  - action: utter_loc_not_serviceable
+  - intent: restaurant_search
+    entities:
+    - location: Mumbai
+  - slot_was_set:
+    - location: Mumbai
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: South Indian
+  - slot_was_set:
+    - cuisine: South Indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: low
+  - slot_was_set:
+    - price: low
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Hotel Ram Ashraya Resturant Address: Bhandarkar Road, Matunga East, Mumbai , Resturant Rating: 4.9 , Average cost for 2:200\n2. Resturant Name: Cafe Madras Resturant Address: 38 B, Circle House, King's Circle Near Maheshwari Udyan, Matunga East, Mumbai , Resturant Rating: 4.8 , Average cost for 2:250\n3. Resturant Name: Prakash Shakahari Upahaar Kendra Resturant Address: 9/10, Horizon Towers, Ranade Road, Dadar West, Dadar Shivaji Park, Mumbai , Resturant Rating: 4.8 , Average cost for 2:150\n4. Resturant Name: Ashok Vada Pav Stall Resturant Address: Off Cadel Road, Kirti College Lane, Prabhadevi, Mumbai , Resturant Rating: 4.8 , Average cost for 2:100\n5. Resturant Name: Guru Kripa Resturant Address: 40, Guru Kripa Building, Road 24, Near SIES College, Sion, Mumbai , Resturant Rating: 4.4 , Average cost for 2:300\n6. Resturant Name: Aaswad Resturant Address: 61, Mejwani, Sadanand, Gokhale Road, Opposite Amar Hind Mandal, Dadar West, Mumbai , Resturant Rating: 4.4 , Average cost for 2:300\n7. Resturant Name: Udipi Idli House Resturant Address: 462, Ram Bhavan, Opposite Jain Temple, Dr. B R Ambedkar Road, King Circle, Matunga East, Mumbai , Resturant Rating: 4.4 , Average cost for 2:150\n8. Resturant Name: Ladu Samrat Resturant Address: 1 & 2, Habib Terrace, Dr BA Road, Lalbaug, Parel, Mumbai , Resturant Rating: 4.3 , Average cost for 2:300\n9. Resturant Name: Mani's Lunch Home Resturant Address: 153 C, Mahskar Building, Near Ruia College, Matunga East, Mumbai , Resturant Rating: 4.3 , Average cost for 2:200\n10. Resturant Name: Gypsy Corner Resturant Address: Opposite Shiv Sena Bhawan, Keluskar Road, Dadar Shivaji Park, Mumbai , Resturant Rating: 4.3 , Average cost for 2:300\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: No
+  - slot_was_set:
+    - ifemail: No
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: chandigarh
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: chandigarh
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: medium
+  - slot_was_set:
+    - price: medium
+  - action: action_search_restaurants
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: sri.pallam@gmail.com
+  - slot_was_set:
+    - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+  
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: chandigarh
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: chandigarh
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: medium
+  - slot_was_set:
+    - price: medium
+  - action: action_search_restaurants
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+      - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+      - email: sri.pallam@gmail.com
+  - slot_was_set:
+      - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+      - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: hyderabad
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: low
+  - slot_was_set:
+    - price: low
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: KS Bakers Resturant Address: Plot 1 & 10, Survey 648, Uppal X Roads, Opposite Metro Station, Uppal, Secunderabad , Resturant Rating: 4.4 , Average cost for 2:300\n2. Resturant Name: Pista House Resturant Address: Yousufain Dargah Road, Bazarghat, Nampally, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:250\n3. Resturant Name: Udipi's Upahar Resturant Address: House 2-21/4, Kanhaiyalal Complex, Indhira Nagar, Gachibowli, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:300\n4. Resturant Name: Aama's Resturant Address: 1-100/29/8/1, Gopanpally, Near Hyderabad University South Gate, Lingampally, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:200\n5. Resturant Name: Zomoz - The Momo Company Resturant Address: Inorbit Mall, Hitech City, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:250\n6. Resturant Name: 4M Biryani House Resturant Address: Badi Masjid, Bholakpur, Musheerabad, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:300\n7. Resturant Name: Student Biryani Resturant Address: 1-10-74/b, Near Pantaloons Lane, Near Saptagiri Towers, Begumpet, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:300\n8. Resturant Name: Suraj Fast Food Resturant Address: 1-1-725/E, Street 9, Gandhi Nagar, Boiguda, Secunderabad , Resturant Rating: 4.3 , Average cost for 2:300\n9. Resturant Name: Zomoz - The Momo Company Resturant Address: GVK One Mall, Banjara Hills, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:250\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: No
+  - slot_was_set:
+    - ifemail: No
+  - action: utter_goodbye
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: hyderabad
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: low
+  - slot_was_set:
+    - price: low
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: KS Bakers Resturant Address: Plot 1 & 10, Survey 648, Uppal X Roads, Opposite Metro Station, Uppal, Secunderabad , Resturant Rating: 4.4 , Average cost for 2:300\n2. Resturant Name: Pista House Resturant Address: Yousufain Dargah Road, Bazarghat, Nampally, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:250\n3. Resturant Name: Udipi's Upahar Resturant Address: House 2-21/4, Kanhaiyalal Complex, Indhira Nagar, Gachibowli, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:300\n4. Resturant Name: Aama's Resturant Address: 1-100/29/8/1, Gopanpally, Near Hyderabad University South Gate, Lingampally, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:200\n5. Resturant Name: Zomoz - The Momo Company Resturant Address: Inorbit Mall, Hitech City, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:250\n6. Resturant Name: 4M Biryani House Resturant Address: Badi Masjid, Bholakpur, Musheerabad, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:300\n7. Resturant Name: Student Biryani Resturant Address: 1-10-74/b, Near Pantaloons Lane, Near Saptagiri Towers, Begumpet, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:300\n8. Resturant Name: Suraj Fast Food Resturant Address: 1-1-725/E, Street 9, Gandhi Nagar, Boiguda, Secunderabad , Resturant Rating: 4.3 , Average cost for 2:300\n9. Resturant Name: Zomoz - The Momo Company Resturant Address: GVK One Mall, Banjara Hills, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:250\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: sri.pallam@gmail.com
+  - slot_was_set:
+    - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+  
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: aroor
+  - slot_was_set:
+    - location: aroor
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: false
+  - action: utter_loc_not_serviceable
+  - intent: restaurant_search
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: north indian
+  - slot_was_set:
+    - cuisine: north indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: high
+  - slot_was_set:
+    - price: high
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: AB's - Absolute Barbecues Resturant Address: Plot 483, 4th Floor, Pemmasani Complex, Bajaj Electronics Building, Near Madhapur Police Station, Road 36, Jubilee Hills, Hyderabad , Resturant Rating: 4.9 , Average cost for 2:1200\n2. Resturant Name: AB's - Absolute Barbecues Resturant Address: Second Floor, Apurupa Silpi, Indiranagar, Gachibowli, Hyderabad , Resturant Rating: 4.8 , Average cost for 2:1200\n3. Resturant Name: Dialogue in the Dark Resturant Address: 5th Floor, Inorbit Mall, Hitech City, Hyderabad , Resturant Rating: 4.8 , Average cost for 2:1200\n4. Resturant Name: Jewel of Nizam - The Minar - The Golkonda Resort Resturant Address: The Minar Golkonda Resorts, Gandipet, Hyderabad , Resturant Rating: 4.7 , Average cost for 2:2500\n5. Resturant Name: AB's - Absolute Barbecues Resturant Address: 8-2-618/10-11, Survey 129/70/283, 2nd Floor, Krishe Amethyst, Road 1, Banjara Hills, Hyderabad , Resturant Rating: 4.7 , Average cost for 2:1200\n6. Resturant Name: Adaa - Taj Falaknuma Palace Resturant Address: Taj Falaknuma Palace, Falaknuma, Hyderabad , Resturant Rating: 4.7 , Average cost for 2:8000\n7. Resturant Name: Prost Brew Pub Resturant Address: 882/A, Road 45, Jubilee Hills, Hyderabad , Resturant Rating: 4.6 , Average cost for 2:2200\n8. Resturant Name: Over The Moon Brew Company Resturant Address: Door 3-5/B-2, Ground Floor, Gachibowli, Hyderabad , Resturant Rating: 4.6 , Average cost for 2:1900\n9. Resturant Name: Barbeque Pride Resturant Address: 790, Rangoli Building, Road 36, Jubilee Hills, Hyderabad , Resturant Rating: 4.6 , Average cost for 2:1200\n10. Resturant Name: AB's - Absolute Barbecues Resturant Address: T-02, 3rd Floor, Inorbit Mall, Mind Space Road, Hitech City, Hyderabad , Resturant Rating: 4.6 , Average cost for 2:1200\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: sri.pallam@gmail.com
+  - slot_was_set:
+    - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: delhi
+    - price: mid
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - price: mid
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Snacks Point Resturant Address: Shop 2, Najafgarh Road, Near Saini Dharamshala, Najafgarh, New Delhi , Resturant Rating: 4.6 , Average cost for 2:300\n2. Resturant Name: Kahi Bhi Kuch Bhi Resturant Address: G-20/277, Sector 7, Rohini, New Delhi , Resturant Rating: 4.6 , Average cost for 2:600\n3. Resturant Name: Global Platters Resturant Address: M-37, Old DLF Colony, Sector 14, Gurgaon , Resturant Rating: 4.6 , Average cost for 2:500\n4. Resturant Name: The Curry Grill-TCG Resturant Address: Shop 139, Near Harichandi Market, Sarafabad, Near Sundar Farm, Sector 73, Near Sector 72, Noida , Resturant Rating: 4.5 , Average cost for 2:550\n5. Resturant Name: Urban O Chaska Resturant Address: Plot 8, Jupiter Enclave Hazipur, Sector 104, Near Sector 110, Noida , Resturant Rating: 4.5 , Average cost for 2:700\n6. Resturant Name: Paddy's Den Resturant Address: U 50/1, Sector 24, Near Basement Market, DLF Phase 3, Gurgaon , Resturant Rating: 4.5 , Average cost for 2:400\n7. Resturant Name: Rowls Resturant Address: Shahdara, New Delhi , Resturant Rating: 4.5 , Average cost for 2:400\n8. Resturant Name: Chef's Hunger Filler Resturant Address: East of Kailash, New Delhi , Resturant Rating: 4.5 , Average cost for 2:700\n9. Resturant Name: SS Loving Point Resturant Address: 499, 1st Floor, Housing Board Colony, Sector 51, Near Sector 50, Gurgaon , Resturant Rating: 4.5 , Average cost for 2:400\n10. Resturant Name: Yes China Delivery Resturant Address: Chittaranjan Park, New Delhi , Resturant Rating: 4.5 , Average cost for 2:400\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: sri.pallam@gmail.com
+  - slot_was_set:
+    - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+  
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: delhi
+    - price: mid
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - price: mid
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Snacks Point Resturant Address: Shop 2, Najafgarh Road, Near Saini Dharamshala, Najafgarh, New Delhi , Resturant Rating: 4.6 , Average cost for 2:300\n2. Resturant Name: Kahi Bhi Kuch Bhi Resturant Address: G-20/277, Sector 7, Rohini, New Delhi , Resturant Rating: 4.6 , Average cost for 2:600\n3. Resturant Name: Global Platters Resturant Address: M-37, Old DLF Colony, Sector 14, Gurgaon , Resturant Rating: 4.6 , Average cost for 2:500\n4. Resturant Name: The Curry Grill-TCG Resturant Address: Shop 139, Near Harichandi Market, Sarafabad, Near Sundar Farm, Sector 73, Near Sector 72, Noida , Resturant Rating: 4.5 , Average cost for 2:550\n5. Resturant Name: Urban O Chaska Resturant Address: Plot 8, Jupiter Enclave Hazipur, Sector 104, Near Sector 110, Noida , Resturant Rating: 4.5 , Average cost for 2:700\n6. Resturant Name: Paddy's Den Resturant Address: U 50/1, Sector 24, Near Basement Market, DLF Phase 3, Gurgaon , Resturant Rating: 4.5 , Average cost for 2:400\n7. Resturant Name: Rowls Resturant Address: Shahdara, New Delhi , Resturant Rating: 4.5 , Average cost for 2:400\n8. Resturant Name: Chef's Hunger Filler Resturant Address: East of Kailash, New Delhi , Resturant Rating: 4.5 , Average cost for 2:700\n9. Resturant Name: SS Loving Point Resturant Address: 499, 1st Floor, Housing Board Colony, Sector 51, Near Sector 50, Gurgaon , Resturant Rating: 4.5 , Average cost for 2:400\n10. Resturant Name: Yes China Delivery Resturant Address: Chittaranjan Park, New Delhi , Resturant Rating: 4.5 , Average cost for 2:400\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+      - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+      - email: sri.pallam@gmail.com
+  - slot_was_set:
+      - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+      - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: chennai
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: chennai
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: mid
+  - slot_was_set:
+    - price: mid
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Kabab Corner Resturant Address: 12/1, Opposite Royal Enfield Showroom, Greams Road, Egmore, Chennai , Resturant Rating: 4.6 , Average cost for 2:450\n2. Resturant Name: Momo Sa-Khang by Kailash Kitchen Resturant Address: 2/247, Perinbavilas Complex, Opposite Chitra Apartments, Choolaimedu, Chennai , Resturant Rating: 4.5 , Average cost for 2:350\n3. Resturant Name: Shree Mithai Resturant Address: 189, AI Block, Shanthi Colony, Anna Nagar East, Chennai , Resturant Rating: 4.4 , Average cost for 2:350\n4. Resturant Name: Shyam's Bombay Halwa House Resturant Address: 6, Govindan Street, G N Chetty Road, T. Nagar, Chennai , Resturant Rating: 4.4 , Average cost for 2:600\n5. Resturant Name: Biriyani Brothers Resturant Address: Old Door 77/1E, New Door 38/1, Cemetry Road, Washermenpet, Chennai , Resturant Rating: 4.4 , Average cost for 2:550\n6. Resturant Name: Sangeetha Express Resturant Address: Medavakkam, Chennai , Resturant Rating: 4.4 , Average cost for 2:300\n7. Resturant Name: Foods & Frames Inn Resturant Address: 9, 2nd Street, Iyyappan Nagar, Lakshmipuram, Kolathur, Chennai , Resturant Rating: 4.4 , Average cost for 2:550\n8. Resturant Name: Made In Madras Resturant Address: 14/9, First Street, Mangalapuram, Kancheepuram, Tambaram, Chennai , Resturant Rating: 4.4 , Average cost for 2:300\n9. Resturant Name: Officers Mess Resturant Address: T. Nagar, Chennai , Resturant Rating: 4.4 , Average cost for 2:400\n10. Resturant Name: Sukkubhai Biriyani Resturant Address: New 14, Old 11/3Q, Railway Station Road, MKN Road, Near Antony Church, Alandur, Chennai , Resturant Rating: 4.3 , Average cost for 2:600\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: No
+  - slot_was_set:
+    - ifemail: No
+  - action: utter_goodbye
+  
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: chennai
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: chennai
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: mid
+  - slot_was_set:
+    - price: mid
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Kabab Corner Resturant Address: 12/1, Opposite Royal Enfield Showroom, Greams Road, Egmore, Chennai , Resturant Rating: 4.6 , Average cost for 2:450\n2. Resturant Name: Momo Sa-Khang by Kailash Kitchen Resturant Address: 2/247, Perinbavilas Complex, Opposite Chitra Apartments, Choolaimedu, Chennai , Resturant Rating: 4.5 , Average cost for 2:350\n3. Resturant Name: Shree Mithai Resturant Address: 189, AI Block, Shanthi Colony, Anna Nagar East, Chennai , Resturant Rating: 4.4 , Average cost for 2:350\n4. Resturant Name: Shyam's Bombay Halwa House Resturant Address: 6, Govindan Street, G N Chetty Road, T. Nagar, Chennai , Resturant Rating: 4.4 , Average cost for 2:600\n5. Resturant Name: Biriyani Brothers Resturant Address: Old Door 77/1E, New Door 38/1, Cemetry Road, Washermenpet, Chennai , Resturant Rating: 4.4 , Average cost for 2:550\n6. Resturant Name: Sangeetha Express Resturant Address: Medavakkam, Chennai , Resturant Rating: 4.4 , Average cost for 2:300\n7. Resturant Name: Foods & Frames Inn Resturant Address: 9, 2nd Street, Iyyappan Nagar, Lakshmipuram, Kolathur, Chennai , Resturant Rating: 4.4 , Average cost for 2:550\n8. Resturant Name: Made In Madras Resturant Address: 14/9, First Street, Mangalapuram, Kancheepuram, Tambaram, Chennai , Resturant Rating: 4.4 , Average cost for 2:300\n9. Resturant Name: Officers Mess Resturant Address: T. Nagar, Chennai , Resturant Rating: 4.4 , Average cost for 2:400\n10. Resturant Name: Sukkubhai Biriyani Resturant Address: New 14, Old 11/3Q, Railway Station Road, MKN Road, Near Antony Church, Alandur, Chennai , Resturant Rating: 4.3 , Average cost for 2:600\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: sri.pallam@gmail.com
+  - slot_was_set:
+    - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - price: mid
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - price: mid
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: Delhi
+  - slot_was_set:
+    - location: Delhi
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Snacks Point Resturant Address: Shop 2, Najafgarh Road, Near Saini Dharamshala, Najafgarh, New Delhi , Resturant Rating: 4.6 , Average cost for 2:300\n2. Resturant Name: Kahi Bhi Kuch Bhi Resturant Address: G-20/277, Sector 7, Rohini, New Delhi , Resturant Rating: 4.6 , Average cost for 2:600\n3. Resturant Name: Global Platters Resturant Address: M-37, Old DLF Colony, Sector 14, Gurgaon , Resturant Rating: 4.6 , Average cost for 2:500\n4. Resturant Name: The Curry Grill-TCG Resturant Address: Shop 139, Near Harichandi Market, Sarafabad, Near Sundar Farm, Sector 73, Near Sector 72, Noida , Resturant Rating: 4.5 , Average cost for 2:550\n5. Resturant Name: Urban O Chaska Resturant Address: Plot 8, Jupiter Enclave Hazipur, Sector 104, Near Sector 110, Noida , Resturant Rating: 4.5 , Average cost for 2:700\n6. Resturant Name: Paddy's Den Resturant Address: U 50/1, Sector 24, Near Basement Market, DLF Phase 3, Gurgaon , Resturant Rating: 4.5 , Average cost for 2:400\n7. Resturant Name: Rowls Resturant Address: Shahdara, New Delhi , Resturant Rating: 4.5 , Average cost for 2:400\n8. Resturant Name: Chef's Hunger Filler Resturant Address: East of Kailash, New Delhi , Resturant Rating: 4.5 , Average cost for 2:700\n9. Resturant Name: SS Loving Point Resturant Address: 499, 1st Floor, Housing Board Colony, Sector 51, Near Sector 50, Gurgaon , Resturant Rating: 4.5 , Average cost for 2:400\n10. Resturant Name: Yes China Delivery Resturant Address: Chittaranjan Park, New Delhi , Resturant Rating: 4.5 , Average cost for 2:400\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: No
+  - slot_was_set:
+    - ifemail: No
+  - action: utter_goodbye
+  
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - price: mid
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - price: mid
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: Delhi
+  - slot_was_set:
+    - location: Delhi
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Snacks Point Resturant Address: Shop 2, Najafgarh Road, Near Saini Dharamshala, Najafgarh, New Delhi , Resturant Rating: 4.6 , Average cost for 2:300\n2. Resturant Name: Kahi Bhi Kuch Bhi Resturant Address: G-20/277, Sector 7, Rohini, New Delhi , Resturant Rating: 4.6 , Average cost for 2:600\n3. Resturant Name: Global Platters Resturant Address: M-37, Old DLF Colony, Sector 14, Gurgaon , Resturant Rating: 4.6 , Average cost for 2:500\n4. Resturant Name: The Curry Grill-TCG Resturant Address: Shop 139, Near Harichandi Market, Sarafabad, Near Sundar Farm, Sector 73, Near Sector 72, Noida , Resturant Rating: 4.5 , Average cost for 2:550\n5. Resturant Name: Urban O Chaska Resturant Address: Plot 8, Jupiter Enclave Hazipur, Sector 104, Near Sector 110, Noida , Resturant Rating: 4.5 , Average cost for 2:700\n6. Resturant Name: Paddy's Den Resturant Address: U 50/1, Sector 24, Near Basement Market, DLF Phase 3, Gurgaon , Resturant Rating: 4.5 , Average cost for 2:400\n7. Resturant Name: Rowls Resturant Address: Shahdara, New Delhi , Resturant Rating: 4.5 , Average cost for 2:400\n8. Resturant Name: Chef's Hunger Filler Resturant Address: East of Kailash, New Delhi , Resturant Rating: 4.5 , Average cost for 2:700\n9. Resturant Name: SS Loving Point Resturant Address: 499, 1st Floor, Housing Board Colony, Sector 51, Near Sector 50, Gurgaon , Resturant Rating: 4.5 , Average cost for 2:400\n10. Resturant Name: Yes China Delivery Resturant Address: Chittaranjan Park, New Delhi , Resturant Rating: 4.5 , Average cost for 2:400\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: sri.pallam@gmail.com
+  - slot_was_set:
+    - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+  
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - price: mid
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - price: mid
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: Delhi
+  - slot_was_set:
+    - location: Delhi
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Snacks Point Resturant Address: Shop 2, Najafgarh Road, Near Saini Dharamshala, Najafgarh, New Delhi , Resturant Rating: 4.6 , Average cost for 2:300\n2. Resturant Name: Kahi Bhi Kuch Bhi Resturant Address: G-20/277, Sector 7, Rohini, New Delhi , Resturant Rating: 4.6 , Average cost for 2:600\n3. Resturant Name: Global Platters Resturant Address: M-37, Old DLF Colony, Sector 14, Gurgaon , Resturant Rating: 4.6 , Average cost for 2:500\n4. Resturant Name: The Curry Grill-TCG Resturant Address: Shop 139, Near Harichandi Market, Sarafabad, Near Sundar Farm, Sector 73, Near Sector 72, Noida , Resturant Rating: 4.5 , Average cost for 2:550\n5. Resturant Name: Urban O Chaska Resturant Address: Plot 8, Jupiter Enclave Hazipur, Sector 104, Near Sector 110, Noida , Resturant Rating: 4.5 , Average cost for 2:700\n6. Resturant Name: Paddy's Den Resturant Address: U 50/1, Sector 24, Near Basement Market, DLF Phase 3, Gurgaon , Resturant Rating: 4.5 , Average cost for 2:400\n7. Resturant Name: Rowls Resturant Address: Shahdara, New Delhi , Resturant Rating: 4.5 , Average cost for 2:400\n8. Resturant Name: Chef's Hunger Filler Resturant Address: East of Kailash, New Delhi , Resturant Rating: 4.5 , Average cost for 2:700\n9. Resturant Name: SS Loving Point Resturant Address: 499, 1st Floor, Housing Board Colony, Sector 51, Near Sector 50, Gurgaon , Resturant Rating: 4.5 , Average cost for 2:400\n10. Resturant Name: Yes China Delivery Resturant Address: Chittaranjan Park, New Delhi , Resturant Rating: 4.5 , Average cost for 2:400\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: sri.pallam@gmail.com
+  - slot_was_set:
+    - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: hyderabad
+    - price: mid
+  - slot_was_set:
+    - location: hyderabad
+  - slot_was_set:
+    - price: mid
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Pizza Den Resturant Address: 7, Ground Floor, Paradise Complex, Near Sunshine Hospital, Paradise Circle, Secunderabad , Resturant Rating: 4.7 , Average cost for 2:400\n2. Resturant Name: Natural Ice Cream Resturant Address: Shop G2, Ground Floor, J.P Tower, Besides Ashoka Bhopal Chamber, S P Road, Secunderabad , Resturant Rating: 4.7 , Average cost for 2:350\n3. Resturant Name: Stikstof Ice-Cream Cafe Resturant Address: House 1-98/15/37, Arunodaya Colony, Hi-Tech City Main Road, Near Durgam Cheruvu Metro Station, Madhapur, Hyderabad , Resturant Rating: 4.6 , Average cost for 2:500\n4. Resturant Name: Natural Ice Cream Resturant Address: G 3, Raghavendra Grand Residency, Opposite Ratnadeep Supermarket, Srinagar Colony, Hyderabad , Resturant Rating: 4.6 , Average cost for 2:350\n5. Resturant Name: Roasted Ego Resturant Address: Plot 1B, 34-135/6, Ruhaniyat, Bharani Colony, Sainikpuri, Secunderabad , Resturant Rating: 4.6 , Average cost for 2:450\n6. Resturant Name: Karachi Bakery Resturant Address: 6-3-190/1, Khanchand Towers, Road 1, Banjara Hills, Hyderabad , Resturant Rating: 4.5 , Average cost for 2:600\n7. Resturant Name: Cream Stone Resturant Address: Plot 138 & 139, Vinayak Nagar, Gachibowli, Hyderabad , Resturant Rating: 4.5 , Average cost for 2:350\n8. Resturant Name: Karachi Bakery Resturant Address: Sri Narayanaya 48, 49 &50, Opposite HP Petrol Pump, Vinayak Nagar, Gachibowli, Hyderabad , Resturant Rating: 4.5 , Average cost for 2:300\n9. Resturant Name: Truffle Tower Resturant Address: Plot B3, Road 7, Jubilee Hills, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:600\n10. Resturant Name: Feranoz Pâtisserie & Cafè Resturant Address: 8-2-542/V/8, Road 7, Banjara Hills, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:600\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: sri.pallam@gmail.com
+  - slot_was_set:
+    - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+    entities:
+    - location: jaggayyapeta
+    - cuisine: mexicon
+    - price: low
+  - slot_was_set:
+    - cuisine: mexicon
+  - slot_was_set:
+    - location: jaggayyapeta
+  - slot_was_set:
+    - price: low
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: false
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: false
+  - action: utter_loc_not_serviceable
+  - intent: restaurant_search
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Nimrah Cafe And Bakery Resturant Address: 20-4-1238/39, Beside Mecca Masjid, Charminar Road, Charminar, Hyderabad , Resturant Rating: 4.9 , Average cost for 2:250\n2. Resturant Name: Milkshake Spot Resturant Address: House 5-3, 1St Floor, Near Government High School, Shanti Nagar Colony, Rajendra Nagar, Hyderabad , Resturant Rating: 4.9 , Average cost for 2:300\n3. Resturant Name: Lamakaan Resturant Address: Near GVK One, Road 5, Banjara Hills, Hyderabad , Resturant Rating: 4.8 , Average cost for 2:200\n4. Resturant Name: Sweet Corns Resturant Address: Below Reliance Mart, Shaikpet Road, Tolichowki, Hyderabad , Resturant Rating: 4.8 , Average cost for 2:100\n5. Resturant Name: Rabiya's Kitchen Resturant Address: Flat 603, B-Block, Akber Towers, Malakpet, Hyderabad , Resturant Rating: 4.7 , Average cost for 2:200\n6. Resturant Name: Swastik Kitchen Resturant Address: Near Bhaskar Rao Nagar Colony, Sainikpuri, Secunderabad , Resturant Rating: 4.7 , Average cost for 2:150\n7. Resturant Name: Cafe Niloufer Resturant Address: 11-4-706/1, Redhills, Bhazar Ghat Road, Lakadikapul, Hyderabad , Resturant Rating: 4.6 , Average cost for 2:200\n8. Resturant Name: Shalimar Tiffins And Snacks Resturant Address: RP Road, Rani Gunj, Secunderabad , Resturant Rating: 4.6 , Average cost for 2:300\n9. Resturant Name: Taaza Kitchen Resturant Address: Plot 497, 100 Feet Road, Ayyappa Society, Mega Hills, Madhapur, Hyderabad , Resturant Rating: 4.6 , Average cost for 2:100\n10. Resturant Name: Euphoria Bakers Resturant Address: Kacheguda, Hyderabad , Resturant Rating: 4.6 , Average cost for 2:300\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: sri.pallam@gmail.com
+  - slot_was_set:
+    - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - price: low
+  - slot_was_set:
+    - price: low
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Karachi Bakery Resturant Address: Sri Narayanaya 48, 49 &50, Opposite HP Petrol Pump, Vinayak Nagar, Gachibowli, Hyderabad , Resturant Rating: 4.5 , Average cost for 2:300\n2. Resturant Name: KS Bakers Resturant Address: Plot 1 & 10, Survey 648, Uppal X Roads, Opposite Metro Station, Uppal, Secunderabad , Resturant Rating: 4.4 , Average cost for 2:300\n3. Resturant Name: Pista House Resturant Address: Yousufain Dargah Road, Bazarghat, Nampally, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:250\n4. Resturant Name: Karachi Bakery Resturant Address: Shop 05, SBR CV Towers, Plot 2, HUDA Techno Enclave, Madhapur, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:300\n5. Resturant Name: Indulge IceCream Resturant Address: 8-2-350/3/1, Road 3, Banjara Hills, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:250\n6. Resturant Name: Ice Magic Resturant Address: 8/1/523, Brindavan Colony Main Road, Care Plaza, Tolichowki, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:250\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: sri.pallam@gmail.com
+  - slot_was_set:
+    - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - location: hyderabad
+    - price: low
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: hyderabad
+  - slot_was_set:
+    - price: low
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Pista House Resturant Address: Yousufain Dargah Road, Bazarghat, Nampally, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:250\n2. Resturant Name: Udipi's Upahar Resturant Address: House 2-21/4, Kanhaiyalal Complex, Indhira Nagar, Gachibowli, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:300\n3. Resturant Name: Aama's Resturant Address: 1-100/29/8/1, Gopanpally, Near Hyderabad University South Gate, Lingampally, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:200\n4. Resturant Name: Zomoz - The Momo Company Resturant Address: Inorbit Mall, Hitech City, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:250\n5. Resturant Name: Manchuriya Go Resturant Address: 30-270/80, Plot 95, Surya Nagar, Safilguda, Malkajgiri, Secunderabad , Resturant Rating: 4.4 , Average cost for 2:200\n6. Resturant Name: 4M Biryani House Resturant Address: Badi Masjid, Bholakpur, Musheerabad, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:300\n7. Resturant Name: KS Bakers Resturant Address: Plot 1 & 10, Survey 648, Uppal X Roads, Opposite Metro Station, Uppal, Secunderabad , Resturant Rating: 4.3 , Average cost for 2:300\n8. Resturant Name: Student Biryani Resturant Address: 1-10-74/b, Near Pantaloons Lane, Near Saptagiri Towers, Begumpet, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:300\n9. Resturant Name: Suraj Fast Food Resturant Address: 1-1-725/E, Street 9, Gandhi Nagar, Boiguda, Secunderabad , Resturant Rating: 4.3 , Average cost for 2:300\n10. Resturant Name: Zomoz - The Momo Company Resturant Address: GVK One Mall, Banjara Hills, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:250\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: No
+  - slot_was_set:
+    - ifemail: No
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - price: low
+    - location: hyderabad
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: hyderabad
+  - slot_was_set:
+    - price: low
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Pista House Resturant Address: Yousufain Dargah Road, Bazarghat, Nampally, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:250\n2. Resturant Name: Udipi's Upahar Resturant Address: House 2-21/4, Kanhaiyalal Complex, Indhira Nagar, Gachibowli, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:300\n3. Resturant Name: Aama's Resturant Address: 1-100/29/8/1, Gopanpally, Near Hyderabad University South Gate, Lingampally, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:200\n4. Resturant Name: Zomoz - The Momo Company Resturant Address: Inorbit Mall, Hitech City, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:250\n5. Resturant Name: Manchuriya Go Resturant Address: 30-270/80, Plot 95, Surya Nagar, Safilguda, Malkajgiri, Secunderabad , Resturant Rating: 4.4 , Average cost for 2:200\n6. Resturant Name: 4M Biryani House Resturant Address: Badi Masjid, Bholakpur, Musheerabad, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:300\n7. Resturant Name: KS Bakers Resturant Address: Plot 1 & 10, Survey 648, Uppal X Roads, Opposite Metro Station, Uppal, Secunderabad , Resturant Rating: 4.3 , Average cost for 2:300\n8. Resturant Name: Student Biryani Resturant Address: 1-10-74/b, Near Pantaloons Lane, Near Saptagiri Towers, Begumpet, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:300\n9. Resturant Name: Suraj Fast Food Resturant Address: 1-1-725/E, Street 9, Gandhi Nagar, Boiguda, Secunderabad , Resturant Rating: 4.3 , Average cost for 2:300\n10. Resturant Name: Zomoz - The Momo Company Resturant Address: GVK One Mall, Banjara Hills, Hyderabad , Resturant Rating: 4.3 , Average cost for 2:250\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+      - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+      - email: sri.pallam@gmail.com
+  - slot_was_set:
+      - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+      - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_2
+  steps:
+  - intent: restaurant_search
+    entities:
+    - location: hyderabad
+    - cuisine: chinese
+    - price: high
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: hyderabad
+  - slot_was_set:
+    - price: high
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: AB's - Absolute Barbecues Resturant Address: Plot 483, 4th Floor, Pemmasani Complex, Bajaj Electronics Building, Near Madhapur Police Station, Road 36, Jubilee Hills, Hyderabad , Resturant Rating: 4.9 , Average cost for 2:1200\n2. Resturant Name: AB's - Absolute Barbecues Resturant Address: Second Floor, Apurupa Silpi, Indiranagar, Gachibowli, Hyderabad , Resturant Rating: 4.8 , Average cost for 2:1200\n3. Resturant Name: AB's - Absolute Barbecues Resturant Address: 8-2-618/10-11, Survey 129/70/283, 2nd Floor, Krishe Amethyst, Road 1, Banjara Hills, Hyderabad , Resturant Rating: 4.7 , Average cost for 2:1200\n4. Resturant Name: Prost Brew Pub Resturant Address: 882/A, Road 45, Jubilee Hills, Hyderabad , Resturant Rating: 4.6 , Average cost for 2:2200\n5. Resturant Name: Over The Moon Brew Company Resturant Address: Door 3-5/B-2, Ground Floor, Gachibowli, Hyderabad , Resturant Rating: 4.6 , Average cost for 2:1900\n6. Resturant Name: Barbeque Pride Resturant Address: 790, Rangoli Building, Road 36, Jubilee Hills, Hyderabad , Resturant Rating: 4.6 , Average cost for 2:1200\n7. Resturant Name: Flechazo Resturant Address: Sun Tower, 2nd Floor, Near Axis Bank, Madhapur, Hyderabad , Resturant Rating: 4.5 , Average cost for 2:1300\n8. Resturant Name: Zero40 Brewing Resturant Address: 271-A, Road 10, Jubilee Hills, Hyderabad , Resturant Rating: 4.5 , Average cost for 2:2400\n9. Resturant Name: Telangana Spice Kitchen Resturant Address: 8/2/292/82/49/A, Park View Enclave, Near Andhra Prabha Office, Jubilee Hills, Hyderabad , Resturant Rating: 4.5 , Average cost for 2:1200\n10. Resturant Name: Hard Rock Cafe Resturant Address: Ground Floor, GVK One Mall, Road 1, Banjara Hills, Hyderabad , Resturant Rating: 4.5 , Average cost for 2:2000\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: sri.pallam@gmail.com
+  - slot_was_set:
+    - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+    entities:
+    - price: mid
+    - cuisine: chinese
+    - location: hyderabad
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: hyderabad
+  - slot_was_set:
+    - price: mid
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: King And Cardinal Bakery Resturant Address: 3-5-908/1/2/3, Pooja Manor, Opposite TVS Showroom, Himayath Nagar, Hyderabad , Resturant Rating: 4.7 , Average cost for 2:350\n2. Resturant Name: South 61 Kitchen Resturant Address: House 3-4-327, Near LB Nagar Metro Station, L B Nagar, Hyderabad , Resturant Rating: 4.6 , Average cost for 2:500\n3. Resturant Name: Karachi Bakery Resturant Address: 6-3-190/1, Khanchand Towers, Road 1, Banjara Hills, Hyderabad , Resturant Rating: 4.5 , Average cost for 2:600\n4. Resturant Name: SSP Kitchen & Dosa Station Resturant Address: Anupama Homes, Narsingi-Puppalaguda Main Road, Manikonda, Hyderabad , Resturant Rating: 4.5 , Average cost for 2:550\n5. Resturant Name: Meridian Cafe & Restaurant Resturant Address: 6-3-697/1, Officers Colony, Panjagutta Cross Road, Panjagutta, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:600\n6. Resturant Name: Santosh Dhaba Exclusive Resturant Address: 8-2-629/1/2, Hanuman Tekdi, Near Hotel Jaya International Lane, Abids, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:500\n7. Resturant Name: Pista House Resturant Address: Etebar Chowk Crossroad, Kotla Alijah Road, Moghalpura, Charminar, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:400\n8. Resturant Name: Siddique Kabab Centre Resturant Address: 9-4-77/33/A/1, Yousuf Tekri Complex, Tolichowki, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:400\n9. Resturant Name: Udipi's Upahar Resturant Address: House 2-21/4, Kanhaiyalal Complex, Indhira Nagar, Gachibowli, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:300\n10. Resturant Name: The Punjabis Swag Resturant Address: Plot 8 - 9, Near HP Petrol Pump, Janardhan Reddy Nagar, Gachibowli, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:500\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+      - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+      - email: sri.pallam@gmail.com
+  - slot_was_set:
+      - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+      - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: south indian
+  - slot_was_set:
+    - cuisine: south indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: high
+  - slot_was_set:
+    - price: high
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: AB's - Absolute Barbecues Resturant Address: Plot 483, 4th Floor, Pemmasani Complex, Bajaj Electronics Building, Near Madhapur Police Station, Road 36, Jubilee Hills, Hyderabad , Resturant Rating: 4.9 , Average cost for 2:1200\n2. Resturant Name: Jewel of Nizam - The Minar - The Golkonda Resort Resturant Address: The Minar Golkonda Resorts, Gandipet, Hyderabad , Resturant Rating: 4.7 , Average cost for 2:2500\n3. Resturant Name: Adaa - Taj Falaknuma Palace Resturant Address: Taj Falaknuma Palace, Falaknuma, Hyderabad , Resturant Rating: 4.7 , Average cost for 2:8000\n4. Resturant Name: Over The Moon Brew Company Resturant Address: Door 3-5/B-2, Ground Floor, Gachibowli, Hyderabad , Resturant Rating: 4.6 , Average cost for 2:1900\n5. Resturant Name: Flechazo Resturant Address: Sun Tower, 2nd Floor, Near Axis Bank, Madhapur, Hyderabad , Resturant Rating: 4.5 , Average cost for 2:1300\n6. Resturant Name: Telangana Spice Kitchen Resturant Address: 8/2/292/82/49/A, Park View Enclave, Near Andhra Prabha Office, Jubilee Hills, Hyderabad , Resturant Rating: 4.5 , Average cost for 2:1200\n7. Resturant Name: Exotica Resturant Address: Door 8-2-686/B/6/PH, 5th Floor, 12th Square Building, Road 12, Banjara Hills, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:1800\n8. Resturant Name: The Fisherman's Wharf Resturant Address: 304, Puppalaguda, Financial District,ISB - Outer Ring Road, Gachibowli, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:1500\n9. Resturant Name: Mazzo - Marriott Executive Apartments Resturant Address: Level ST, Survey 133, SLN Terminus, Near Botanical Gardens, Gachibowli, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:1700\n10. Resturant Name: Jewel of Nizam - The Golkonda Hotel Resturant Address: The Golkonda Hotel, 10-1-124, Banjara Hills, Masab Tank, Hyderabad , Resturant Rating: 4.4 , Average cost for 2:2200\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+      - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+      - email: sri.pallam@gmail.com
+  - slot_was_set:
+      - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+      - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: kolkata
+  - slot_was_set:
+    - location: kolkata
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: high
+  - slot_was_set:
+    - price: high
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: The Grid, Restaurant Address: 86A, Haute Street, Corporate Park, Topsia Road (South), Topsia, Kolkata, Zomato Rating: 4.7, Average cost for 2:2000\n2. Resturant Name: Hard Rock Cafe, Restaurant Address: 57, Park Mansion, Near Reliance Digital, Park Street Area, Kolkata, Zomato Rating: 4.5, Average cost for 2:2500\n3. Resturant Name: Spice Kraft, Restaurant Address: 54/1/2A, Hazra Road, Near Hazra Law College, Ballygunge, Kolkata, Zomato Rating: 4.5, Average cost for 2:850\n4. Resturant Name: Snacking, Restaurant Address: 188/60/2, Lake Gardens, Kolkata, Zomato Rating: 4.5, Average cost for 2:900\n5. Resturant Name: Carpe Diem, Restaurant Address: 18M, Park Street Area, Kolkata, Zomato Rating: 4.5, Average cost for 2:1000\n6. Resturant Name: Barbeque Nation, Restaurant Address: 1st Floor, 24, Park Center Building, Park Street Area, Kolkata, Zomato Rating: 4.5, Average cost for 2:1800\n7. Resturant Name: Marco Polo, Restaurant Address: 24, Park Centre Building, Park Street Area, Kolkata, Zomato Rating: 4.5, Average cost for 2:1000\n8. Resturant Name: Chili's Grill & Bar, Restaurant Address: 1858, Acropolis Mall, Rajdanga Main Road, Kasba, Kolkata, Zomato Rating: 4.5, Average cost for 2:1200\n9. Resturant Name: Chili's Grill & Bar, Restaurant Address: 375, 2nd Floor, South City Mall, Prince Anwar Shah Road, Kolkata, Zomato Rating: 4.5, Average cost for 2:1200\n10. Resturant Name: Tamara - Pipal Tree Hotel, Restaurant Address: PRGM-AS/465, Hatiara, Major Arterial Road, New Town, Kolkata, Zomato Rating: 4.5, Average cost for 2:1800\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+      - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+      - email: sri.pallam@gmail.com
+  - slot_was_set:
+      - email: sri.pallam@gmail.com
+  - action: send_email
+  - slot_was_set:
+      - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+    - intent: restaurant_search
+      entities:
+        - location: kolkata
+        - price: mid
+    - slot_was_set:
+        - location: kolkata
+    - slot_was_set:
+        - price: mid
+    - action: action_check_location
+    - slot_was_set:
+        - check_op: true
+    - action: utter_ask_cuisine
+    - intent: restaurant_search
+      entities:
+        - cuisine: italian
+    - slot_was_set:
+        - cuisine: italian
+    - action: action_search_restaurants
+    - slot_was_set:
+        - restaurant_dict: "1. Resturant Name: Kathleen, Restaurant Address: M210, Rajarhat, New Town, Kolkata, Zomato Rating: 4.5, Average cost for 2:300\n2. Resturant Name: My Big Fat Belly, Restaurant Address: 22, Sarat Bose Road, Sreepally, Bhawanipur, Kolkata, Zomato Rating: 4.4, Average cost for 2:600\n3. Resturant Name: The Chaiwala, Restaurant Address: 6/1/2, Graham's Land, N.S.C Bose Road, Tollygunge, Kolkata, Zomato Rating: 4.4, Average cost for 2:500\n4. Resturant Name: Baskin Robbins, Restaurant Address: 68A, Bhupen Roy Road, Behala, Kolkata, Zomato Rating: 4.4, Average cost for 2:300\n5. Resturant Name: Ovenstory Pizza, Restaurant Address: 29, 1st Lane, Ballygunge, Kolkata, Zomato Rating: 4.4, Average cost for 2:600\n6. Resturant Name: Firangi Bake, Restaurant Address: Ghosh Dutta Para, Hatiara, New Town, Kolkata, Zomato Rating: 4.4, Average cost for 2:450\n7. Resturant Name: Ovenstory Pizza, Restaurant Address: Barasat, Kolkata, Zomato Rating: 4.4, Average cost for 2:600\n8. Resturant Name: Ovenstory Pizza, Restaurant Address: Plot 83, 1st Floor, Phase II, Kasba Industrial Estate, Kasba, Kolkata, Zomato Rating: 4.4, Average cost for 2:600\n9. Resturant Name: Ovenstory Pizza, Restaurant Address: Alipore, Kolkata, Zomato Rating: 4.4, Average cost for 2:600\n10. Resturant Name: Blue Mug, Restaurant Address: 1/121, Jodhpur Park, Kolkata, Zomato Rating: 4.3, Average cost for 2:650\n"
+    - action: utter_ask_ifemail
+    - intent: if_email
+      entities:
+      - ifemail: Yes
+    - slot_was_set:
+        - ifemail: Yes
+    - action: utter_ask_email
+    - intent: send_email
+      entities:
+        - email: sri.pallam@gmail.com
+    - slot_was_set:
+        - email: sri.pallam@gmail.com
+    - action: send_email
+    - slot_was_set:
+        - check_mail: true
+    - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: restaurant_search
+      entities:
+        - location: hyderabad
+        - price: low
+    - slot_was_set:
+        - location: hyderabad
+    - slot_was_set:
+        - price: low
+    - action: action_check_location
+    - slot_was_set:
+        - check_op: true
+    - action: utter_ask_cuisine
+    - intent: restaurant_search
+      entities:
+        - cuisine: italian
+    - slot_was_set:
+        - cuisine: italian
+    - action: action_search_restaurants
+    - slot_was_set:
+        - restaurant_dict: "1. Resturant Name: Karachi Bakery, Restaurant Address: Sri Narayanaya 48, 49 &50, Opposite HP Petrol Pump, Vinayak Nagar, Gachibowli, Hyderabad, Zomato Rating: 4.5, Average cost for 2:300\n2. Resturant Name: Pista House, Restaurant Address: Yousufain Dargah Road, Bazarghat, Nampally, Hyderabad, Zomato Rating: 4.4, Average cost for 2:250\n3. Resturant Name: Karachi Bakery, Restaurant Address: Shop 05, SBR CV Towers, Plot 2, HUDA Techno Enclave, Madhapur, Hyderabad, Zomato Rating: 4.4, Average cost for 2:300\n4. Resturant Name: Indulge IceCream, Restaurant Address: 8-2-350/3/1, Road 3, Banjara Hills, Hyderabad, Zomato Rating: 4.4, Average cost for 2:250\n5. Resturant Name: Ice Magic, Restaurant Address: 8/1/523, Brindavan Colony Main Road, Care Plaza, Tolichowki, Hyderabad, Zomato Rating: 4.4, Average cost for 2:250\n6. Resturant Name: KS Bakers, Restaurant Address: Plot 1 & 10, Survey 648, Uppal X Roads, Opposite Metro Station, Uppal, Secunderabad, Zomato Rating: 4.3, Average cost for 2:300\n"
+    - action: utter_ask_ifemail
+    - intent: if_email
+      entities:
+        - ifemail: No
+    - slot_was_set:
+        - ifemail: No
+    - action: utter_goodbye
+
+- story: interactive_story_2
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: restaurant_search
+      entities:
+        - location: hyderabad
+        - price: low
+    - slot_was_set:
+        - location: hyderabad
+    - slot_was_set:
+        - price: low
+    - action: action_check_location
+    - slot_was_set:
+        - check_op: true
+    - action: utter_ask_cuisine
+    - intent: restaurant_search
+      entities:
+        - cuisine: italian
+    - slot_was_set:
+        - cuisine: italian
+    - action: action_search_restaurants
+    - slot_was_set:
+        - restaurant_dict: "1. Resturant Name: Karachi Bakery, Restaurant Address: Sri Narayanaya 48, 49 &50, Opposite HP Petrol Pump, Vinayak Nagar, Gachibowli, Hyderabad, Zomato Rating: 4.5, Average cost for 2:300\n2. Resturant Name: Pista House, Restaurant Address: Yousufain Dargah Road, Bazarghat, Nampally, Hyderabad, Zomato Rating: 4.4, Average cost for 2:250\n3. Resturant Name: Karachi Bakery, Restaurant Address: Shop 05, SBR CV Towers, Plot 2, HUDA Techno Enclave, Madhapur, Hyderabad, Zomato Rating: 4.4, Average cost for 2:300\n4. Resturant Name: Indulge IceCream, Restaurant Address: 8-2-350/3/1, Road 3, Banjara Hills, Hyderabad, Zomato Rating: 4.4, Average cost for 2:250\n5. Resturant Name: Ice Magic, Restaurant Address: 8/1/523, Brindavan Colony Main Road, Care Plaza, Tolichowki, Hyderabad, Zomato Rating: 4.4, Average cost for 2:250\n6. Resturant Name: KS Bakers, Restaurant Address: Plot 1 & 10, Survey 648, Uppal X Roads, Opposite Metro Station, Uppal, Secunderabad, Zomato Rating: 4.3, Average cost for 2:300\n"
+    - action: utter_ask_ifemail
+    - intent: if_email
+      entities:
+        - ifemail: Yes
+    - slot_was_set:
+        - ifemail: Yes
+    - action: utter_ask_email
+    - intent: send_email
+      entities:
+        - email: sri.pallam@gmail.com
+    - slot_was_set:
+        - email: sri.pallam@gmail.com
+    - action: send_email
+    - slot_was_set:
+        - check_mail: true
+    - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - price: high
+  - slot_was_set:
+    - price: high
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: nagpur
+  - slot_was_set:
+    - location: nagpur
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: north indian
+  - slot_was_set:
+    - cuisine: north indian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Singh Saab Resturant Address: Near Indian Oil Petrol Pump, Mihan, Nagpur , Resturant Rating: 4.5 , Average cost for 2:1200\n2. Resturant Name: Barbeque Nation Resturant Address: Unit K1, FC 6, 2nd Floor, Eternity Mall, Variety Chowk, Near Sitabuldi, Nagpur , Resturant Rating: 4.4 , Average cost for 2:1600\n3. Resturant Name: The Latest Recipe - Le Meridien Resturant Address: Le Meridien, Opposite Mihan Flyover, Near Wardha Road, Nagpur , Resturant Rating: 4.4 , Average cost for 2:2000\n4. Resturant Name: Biryani By Kilo Resturant Address: Dharampeth, Nagpur , Resturant Rating: 4.4 , Average cost for 2:700\n5. Resturant Name: Bouffage Resturant Address: B Wing, Lower Ground Floor, Rashtrabhasha Sankul, Shankar Nagar, Near Bajaj Nagar, Nagpur , Resturant Rating: 4.3 , Average cost for 2:1200\n6. Resturant Name: Ashoka Restaurant Resturant Address: 60, Sadar Bazar Main Road, Sadar, Nagpur , Resturant Rating: 4.3 , Average cost for 2:1300\n7. Resturant Name: Kareem's Resturant Address: Ground Floor, Aman Lifestyle Nelson Square, Rajnagar, Near Sadar, Nagpur , Resturant Rating: 4.3 , Average cost for 2:800\n8. Resturant Name: Little Italy Resturant Address: Plot 1, Near MLA Hostel, Civil Lines, Nagpur , Resturant Rating: 4.3 , Average cost for 2:1000\n9. Resturant Name: Behrouz Biryani Resturant Address: Shop 8, Lake View Apartment, T Point Hingna Road, Near Hingna T Point, Nagpur , Resturant Rating: 4.3 , Average cost for 2:700\n10. Resturant Name: Kasbaa Hill Restaurant Resturant Address: Gondkhairi Tahsil - Kalmeshwar, Amravati Road, Nagpur , Resturant Rating: 4.3 , Average cost for 2:1000\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+      - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+      - email: rcmanu@gmail.com
+  - slot_was_set:
+      - email: rcmanu@gmail.com
+  - action: send_email
+  - slot_was_set:
+      - check_mail: true
+  - action: utter_goodbye
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - price: high
+  - slot_was_set:
+    - price: high
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: nagpur
+  - slot_was_set:
+    - location: nagpur
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: north indian
+  - slot_was_set:
+    - cuisine: north indian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Singh Saab Resturant Address: Near Indian Oil Petrol Pump, Mihan, Nagpur , Resturant Rating: 4.5 , Average cost for 2:1200\n2. Resturant Name: Barbeque Nation Resturant Address: Unit K1, FC 6, 2nd Floor, Eternity Mall, Variety Chowk, Near Sitabuldi, Nagpur , Resturant Rating: 4.4 , Average cost for 2:1600\n3. Resturant Name: The Latest Recipe - Le Meridien Resturant Address: Le Meridien, Opposite Mihan Flyover, Near Wardha Road, Nagpur , Resturant Rating: 4.4 , Average cost for 2:2000\n4. Resturant Name: Biryani By Kilo Resturant Address: Dharampeth, Nagpur , Resturant Rating: 4.4 , Average cost for 2:700\n5. Resturant Name: Bouffage Resturant Address: B Wing, Lower Ground Floor, Rashtrabhasha Sankul, Shankar Nagar, Near Bajaj Nagar, Nagpur , Resturant Rating: 4.3 , Average cost for 2:1200\n6. Resturant Name: Ashoka Restaurant Resturant Address: 60, Sadar Bazar Main Road, Sadar, Nagpur , Resturant Rating: 4.3 , Average cost for 2:1300\n7. Resturant Name: Kareem's Resturant Address: Ground Floor, Aman Lifestyle Nelson Square, Rajnagar, Near Sadar, Nagpur , Resturant Rating: 4.3 , Average cost for 2:800\n8. Resturant Name: Little Italy Resturant Address: Plot 1, Near MLA Hostel, Civil Lines, Nagpur , Resturant Rating: 4.3 , Average cost for 2:1000\n9. Resturant Name: Behrouz Biryani Resturant Address: Shop 8, Lake View Apartment, T Point Hingna Road, Near Hingna T Point, Nagpur , Resturant Rating: 4.3 , Average cost for 2:700\n10. Resturant Name: Kasbaa Hill Restaurant Resturant Address: Gondkhairi Tahsil - Kalmeshwar, Amravati Road, Nagpur , Resturant Rating: 4.3 , Average cost for 2:1000\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+      - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+      - email: rcmanu@gmail.com
+  - slot_was_set:
+      - email: rcmanu@gmail.com
+  - action: send_email
+  - slot_was_set:
+      - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - cuisine: American
+    - location: attingal
+  - slot_was_set:
+    - cuisine: American
+  - slot_was_set:
+    - location: attingal
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: false
+  - action: utter_loc_not_serviceable
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - cuisine: American
+    - location: kayamkulam
+  - slot_was_set:
+    - cuisine: American
+  - slot_was_set:
+    - location: kayamkulam
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: false
+  - action: utter_loc_not_serviceable
+  - intent: restaurant_search
+    entities:
+    - location: kollam
+  - slot_was_set:
+    - location: kollam
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: mid
+  - slot_was_set:
+    - price: mid
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: ''
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: No
+  - slot_was_set:
+    - ifemail: No
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+    entities:
+    - price: low
+    - location: ambalappuzha
+  - slot_was_set:
+    - location: ambalappuzha
+  - slot_was_set:
+    - price: low
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: false
+  - action: utter_loc_not_serviceable
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - price: mid
+    - location: ambalappuzha
+  - slot_was_set:
+    - location: ambalappuzha
+  - slot_was_set:
+    - price: mid
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: false
+  - action: utter_loc_not_serviceable
+  - intent: restaurant_search
+    entities:
+    - price: high
+    - location: nanded
+  - slot_was_set:
+    - location: nanded
+  - slot_was_set:
+    - price: high
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: American
+  - slot_was_set:
+    - cuisine: American
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: ''
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: No
+  - slot_was_set:
+    - ifemail: No
+  - action: utter_goodbye
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - price: mid
+    - location: ambalappuzha
+  - slot_was_set:
+    - location: ambalappuzha
+  - slot_was_set:
+    - price: mid
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: false
+  - action: utter_loc_not_serviceable
+  - intent: restaurant_search
+    entities:
+    - price: high
+    - location: nanded
+  - slot_was_set:
+    - location: nanded
+  - slot_was_set:
+    - price: high
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Punjabi Tadka Resturant Address: Hotel Nirmal palace opposite Kalamandir, nanded, Nanded Locality, Nanded , Resturant Rating: 4.2 , Average cost for 2:750\n2. Resturant Name: The Table Resturant Address: Near D-Mart, Canal Road, Wadi BK, Nanded Locality, Nanded , Resturant Rating: 3.7 , Average cost for 2:800\n3. Resturant Name: Tulsi comfort Resturant Address: H.No. 1-13-1036/1 Anand nagar road tilak nagar, Nanded Locality, Nanded , Resturant Rating: 3.5 , Average cost for 2:1000\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: rcmanu@gmail.com
+  - slot_was_set:
+    - email: rcmanu@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - price: mid
+    - location: ambalapuzha
+  - slot_was_set:
+    - location: ambalapuzha
+  - slot_was_set:
+    - price: mid
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: false
+  - action: utter_loc_not_serviceable
+  - intent: restaurant_search
+    entities:
+    - price: mid
+    - location: nanded
+  - slot_was_set:
+    - location: nanded
+  - slot_was_set:
+    - price: mid
+  - action: action_check_location
+  - slot_was_set:
+    - check_op: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: north indian
+  - slot_was_set:
+    - cuisine: north indian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_dict: "1. Resturant Name: Swagat Hotel Resturant Address: Chatrapati chowk, Purana road, Nanded, Nanded Locality, Nanded , Resturant Rating: 4.4 , Average cost for 2:300\n2. Resturant Name: Khusu's Maa Angad Family Restaurant Resturant Address: Gurudwara Chowk, gate no 1, Nanded Locality, Nanded , Resturant Rating: 4.2 , Average cost for 2:450\n3. Resturant Name: Honey Bunny Cafe Resturant Address: Shop No 30 BK Hall, Shrinagar, Nanded, Nanded Locality, Nanded , Resturant Rating: 4.2 , Average cost for 2:400\n4. Resturant Name: A.R. Patels Non Veg Restaurant Resturant Address: Shri shaikh magdum kamaloddin Shukla complex iti road, Nanded Locality, Nanded , Resturant Rating: 4.2 , Average cost for 2:350\n5. Resturant Name: Priya Veg Restaurant Resturant Address: Yashvant College Road Opp Pharmacy College Shyam Nagar, Nanded - 431601, Nanded Locality, Nanded , Resturant Rating: 4.1 , Average cost for 2:350\n6. Resturant Name: Sunder Hotel Resturant Address: guradawara chowk, hunuman mandir opp, Nanded - 431601, Near Gurudwara Gate No 1, Nanded Locality, Nanded , Resturant Rating: 4.1 , Average cost for 2:300\n7. Resturant Name: Visawa Palace Resturant Address: H.NO 1-25-57 industrial area shivajinagar nanded , Resturant Rating: 4.1 , Average cost for 2:600\n8. Resturant Name: Aditi bar and restaurant Resturant Address: near ambedkar Chowk latur phata, Nanded Locality, Nanded , Resturant Rating: 4.1 , Average cost for 2:400\n9. Resturant Name: Hotel Paradise Resturant Address: In Front Of Talha Residency, Station Road Nanded Locality, Nanded , Resturant Rating: 4.0 , Average cost for 2:400\n10. Resturant Name: A1- Tandoor Hotel Resturant Address: chaitnya apartment shop no 3-5-52 chikhalwadi gurudwara road, Nanded Locality, Nanded , Resturant Rating: 4.0 , Average cost for 2:300\n"
+  - action: utter_ask_ifemail
+  - intent: if_email
+    entities:
+    - ifemail: Yes
+  - slot_was_set:
+    - ifemail: Yes
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: rcmanu@gmail.com
+  - slot_was_set:
+    - email: rcmanu@gmail.com
+  - action: send_email
+  - slot_was_set:
+    - check_mail: true
+  - action: utter_goodbye

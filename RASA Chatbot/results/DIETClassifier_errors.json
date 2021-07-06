@@ -1,0 +1,118 @@
+[
+  {
+    "text": "yes",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "ifemail",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.603622317314148,
+        "value": "yes",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Yes",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "ifemail",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.603622317314148,
+        "value": "Yes",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "No",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "ifemail",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.6194513440132141,
+        "value": "No",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "central indian restaurant",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "central",
+        "entity": "location"
+      },
+      {
+        "start": 8,
+        "end": 14,
+        "value": "indian",
+        "entity": "cuisine"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.7372750639915466,
+        "value": "central indian",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "find me a mexican restaurant in bangalore in a budget price range",
+    "entities": [
+      {
+        "start": 10,
+        "end": 17,
+        "value": "mexican",
+        "entity": "cuisine"
+      },
+      {
+        "start": 32,
+        "end": 41,
+        "value": "bangalore",
+        "entity": "location"
+      },
+      {
+        "start": 47,
+        "end": 53,
+        "value": "low",
+        "entity": "price"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cuisine",
+        "start": 10,
+        "end": 17,
+        "confidence_entity": 0.8935468792915344,
+        "value": "Mexican",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 32,
+        "end": 41,
+        "confidence_entity": 0.9992522597312927,
+        "value": "bengaluru",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  }
+]

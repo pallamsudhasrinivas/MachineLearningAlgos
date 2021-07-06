@@ -1,0 +1,26 @@
+[
+  {
+    "text": "yes",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "if_email",
+      "confidence": 0.7141720056533813
+    }
+  },
+  {
+    "text": "Yes",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "if_email",
+      "confidence": 0.7141720056533813
+    }
+  },
+  {
+    "text": "No",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "if_email",
+      "confidence": 0.7965080142021179
+    }
+  }
+]

@@ -7,3 +7,4 @@ Machine learning algorithms
 4. House Price Prediction: Prediction of house price using advanced regression models
 5. Telecom Churn Prediction: Telecom churn prediction 
 6. RASA chat bot: Chat bot using RASA framework to consume Zomato API
+7. Tic Tac Toe: Reinforcement Learning assigment

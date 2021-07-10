@@ -8,3 +8,4 @@ Machine learning algorithms
 5. Telecom Churn Prediction: Telecom churn prediction 
 6. RASA chat bot: Chat bot using RASA framework to consume Zomato API
 7. Tic Tac Toe: Reinforcement Learning assigment
+8. Gesture Recognition: CNN RNN based gesture recognition assignment

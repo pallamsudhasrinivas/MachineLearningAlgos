@@ -9,3 +9,4 @@ Machine learning algorithms
 6. RASA chat bot: Chat bot using RASA framework to consume Zomato API
 7. Tic Tac Toe: Reinforcement Learning assigment
 8. Gesture Recognition: CNN RNN based gesture recognition assignment
+9. SPAM-HAM Example: Categorise the emails as SPAM and HAM
